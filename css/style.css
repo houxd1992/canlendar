@@ -1,0 +1,26 @@
+* {margin: 0;padding: 0;}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #eee;
+}
+/* 日历 */
+.canlendar {
+	width: 1200px;
+	margin: 20px auto;
+}
+.canlendar_table > thead > tr {
+	height: 50px;
+	text-align: center;
+}
+.canlendar_table > tbody > tr {
+	height: 150px;
+}
+.canlendar_table > tbody > tr > td {
+	text-align: right;
+	vertical-align: top;
+	padding: 4px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+}

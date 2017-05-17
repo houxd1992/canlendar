@@ -2,9 +2,60 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>canlendar</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="script/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		
+		<div id="canlendar">
+			<table class="canlendar_table">
+				<thead>
+					<td>周日</td><td>周一</td><td>周二</td><td>周三</td><td>周四</td><td>周五</td><td>周六</td>
+				</thead>
+				<tbody>
+					<tr v-for="(week,index) in 5">
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</body>
+	<script type="text/javascript">
+		var canlendar = new Vue({
+			el: '#canlendar',
+			data:{
+				day:[],
+				year: 2017,
+				month: 10
+			},
+			mounted:function(){
+				var dayarr = [];
+				
+				var y = this.month == 12 ? this.year + 1 : this.year;	//下一月所在的年
+				var m = this.month == 12 ? 1 : this.month;  //下一个月
+				//这个月第一天星期几
+				var firstDayWeek = new Date(y,m-1,1).getDay();
+				//这个月的最后一天是几号
+				var lastDayDate = new Date(new Date(y,m,1) - 1).getDate()
+				//上个月最后一天是几号
+				var prevMonthLastDate = new Date(new Date(y,m-1,1) - 1).getDate()
+				//这个月需要放上个月的天数（第一天周几，就需要放几天上个月）
+				
+				
+				
+			},
+			computed:{
+				
+			},
+			methods:{
+				
+			}
+		})
+	</script>
 </html>
